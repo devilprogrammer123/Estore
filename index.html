@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    html,
+    body {
+        width: 100%;
+        height: 100vh;
+    }
+    @media screen and (max-width:2000px) {
+        .main{
+            display: none;
+
+        }
+        body::after{
+            content: "this site is compatabel only for desktop mode(2000px) only !  if you can see this set your resoulation 2000px";
+            display: flex;
+            font-size: 80px;
+            align-items: center;
+            justify-content: center;
+        }
+        
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .container {
+        padding: 0px 170px;
+    }
+
+    header {
+        background-color: black;
+    }
+
+    .info {
+        color: white;
+        height: 7vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    .infoleft {
+        display: flex;
+        justify-content: space-between;
+        width: 12%;
+
+    }
+
+    .country select {
+        background-color: black;
+        color: white;
+        border: none;
+        font-size: 15px;
+
+    }
+
+    .inforight {
+        /* width: 30%; */
+    }
+
+    .inforight ul {
+        display: flex;
+        list-style: none;
+        width: 100%;
+    }
+
+    .inforight ul li {
+        width: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: large;
+        /* padding: 0 5px; */
+        margin: 0px 5px;
+    }
+
+
+
+
+
+
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        height: 100px;
+        align-items: center;
+    }
+
+    .navmidel ul {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        list-style: none;
+    }
+
+    .navmidel ul li {
+        width: 100px;
+    }
+
+    .latest {
+        position: relative;
+    }
+
+    .navmidel .latest .hot {
+        background-color: rgb(254, 9, 60);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: -20px;
+        left: 40px;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 8px;
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.311);
+        font-size: 12px;
+        cursor: pointer;
+    }
+
+
+
+    .navright {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .search {
+        border: 1px solid;
+        border-radius: 50px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 200px;
+        height: 40px;
+        border: 1px solid rgba(0, 0, 0, 0.075);
+        margin: 0px 20px;
+    }
+
+    .search input {
+        border: none;
+        height: 100%;
+        width: 100%;
+        outline: none;
+        /* border-radius: 50px; */
+        font-size: large;
+
+    }
+
+    .search i {
+        font-size: 25px;
+    }
+
+    .heart {
+        border: 1px solid rgba(0, 0, 0, 0.075);
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: .7;
+        font-size: 25px;
+        border-radius: 100%;
+        margin: 0px 20px;
+    }
+
+    .cart {
+        border: 1px solid rgba(0, 0, 0, 0.075);
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 25px;
+        border-radius: 100%;
+        margin: 0px 20px;
+        opacity: .7;
+    }
+
+    .navright button  {
+        width: 100px;
+        height: 50px;
+        border-radius: 50px;
+        font-size: large;
+        color: white;
+        background-color: rgb(37, 119, 253);
+        border: none;
+        margin: 0px 20px;
+    }
+
+
+
+    .covercon {
+        background-image: url("assets (3)/asset 26.jpeg");
+    }
+
+    .coverimg img {
+        margin: -3px;
+    }
+
+    .cover {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .content span {
+        font-family: "Yellowtail", cursive;
+        color: rgb(37, 119, 253);
+        font-size: 40px;
+        font-style: italic;
+    }
+
+    .content h1 {
+        width: 150px;
+        font-size: 100px;
+        font-family: "Playfair Display", serif;
+    }
+
+    .content p {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        width: 350px;
+        font-size: 25px;
+
+    }
+
+    .content button {
+        width: 150px;
+        height: 50px;
+        border-radius: 50px;
+        font-size: large;
+        color: white;
+        background-color: rgb(37, 119, 253);
+        border: none;
+        margin: 30px 0px;
+    }
+
+
+
+
+    .catcon {
+        padding: 0 70px;
+    }
+
+    .category {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+        margin: 100px 0px;
+
+    }
+
+    .cattop {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        margin-bottom: 80px;
+    }
+
+    .cattop h1 {
+        margin: 0px 0px;
+        font-size: 50px;
+        font-family: serif;
+    }
+
+
+    .catbottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .products {
+        position: relative;
+    }
+
+    .catcontent {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        right: 52px;
+    }
+
+    .catcontent h1 {
+        font-size: 40px;
+        font-family: "Playfair Display", serif;
+
+    }
+    .catcontent span{
+        font-family: "Yellowtail", cursive;
+        color: rgb(37, 119, 253);
+        font-size: 25px;
+        font-style: italic;
+        text-shadow: -2px -2px white;
+
+    }
+    .catcontent a{
+        background-color:rgb(255,206,37) ;
+        font-size: large;
+        padding: 10px 20px;
+        border-radius: 50px;
+        margin: 10px 0px;
+        position: relative;
+    }
+    .catcontent .overrite{
+        position: absolute;
+        top: 83px;
+    }
+
+
+
+
+
+    .listcon{
+        padding: 0px 400px;
+    }
+    .types{
+        display: flex;
+        align-content: center;
+        justify-content: space-between;
+        border-bottom: 2px solid gray;
+        padding: 20px;
+    }
+    .typeleft h1{
+        font-size: 50px;
+        font-family: "Playfair Display", serif;
+    }
+    .typeright{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .typeright ul{
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        list-style: none;
+        width: 500px;
+
+    }
+    .typeright ul li{
+        width: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .productitems{
+        display: grid;
+        align-items: center;
+        justify-content: space-between;
+        padding: 60px 40px;
+        grid-template-columns: auto auto auto;
+    }
+    .item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 20px 20px;
+    }
+    .item ul{
+        display: flex;
+        list-style: none;
+        align-content: center;
+        justify-content: center;
+    }
+    .item ul li{
+        font-size: 20px;
+        padding: 0px 15px;
+    }
+    .item ul li :nth-child(1){
+        color: red;
+    }
+    .item h2{
+        padding: 10px 0px;
+        font-family: "Playfair Display", serif;
+        color: rgba(0, 0, 0, 0.412);
+    }
+
+    .stars{
+        padding: 30px 0px;
+    }
+
+
+
+
+    
+
+    .shopproduct{
+        background: url("assets (3)/asset 27.png");
+        /* background-size: cover; */
+        object-fit: cover;
+        background-position: bottom;
+        background-repeat: no-repeat;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+    .shopproduct .model1{
+        z-index: 99;
+    }
+    .shopproduct .model1text{
+        writing-mode: vertical-lr;
+        rotate: 180deg;
+        position:absolute;
+        bottom: 20px;
+        left: 250px;
+        color: rgba(148, 148, 148, 0.438);
+        font-size: 110px;
+        -webkit-text-fill-color: rgba(128, 128, 128, 0);
+        -webkit-text-stroke: 1px;
+        font-weight: 900;
+        padding: 10px 0px;
+    }
+
+    .model1content{
+        padding: 100px 70px;
+    }
+    .model1content h1{
+        font-size: 50px;
+        width: 70%;
+        font-family: "Playfair Display", serif;
+        margin: 20px 0px;
+    }
+    .model1content p{
+        font-size: 20px;
+        margin: 20px 0px;
+    }
+    .model1content button{
+        width: 150px;
+        height: 50px;
+        border-radius: 50px;
+        background-color: black;
+        color: white;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: larger;
+        margin: 30px 0px;
+    }
+    .imgcloth{
+        position: absolute;
+        bottom: 30px;
+        right: 70px;
+    }
+
+
+
+
+
+
+    .collectioncon{
+        margin-top: 200px;
+        padding:40px 20%;
+
+    }
+    .collection{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .collectionleft .leftcontent h1{
+        font-size: 50px;
+        width: 60%;
+        font-family: "Playfair Display", serif;
+        margin: 20px 0px;
+    }
+    .leftcontent p{
+        font-size: 25px;
+        margin: 20px 0px;
+    }
+    .leftcontent button{
+        width: 150px;
+        height: 50px;
+        margin: 40px 0px;
+        border-radius: 50px;
+        background-color: rgb(37, 119, 253);
+        color: white;
+        font-size: larger;
+        border: none;
+    }
+    .leftimg{
+        margin: 100px 0px;
+    }
+    
+    
+    .collectionright .colimg{
+        display: flex;
+        align-items: bottom;
+    }
+    .collectionright{
+        display: flex;
+        flex-direction: column;
+        margin-left:100px ;
+    }
+    .colimg h1{
+        
+    }
+
+    .rightcontent h1{
+        text-align: right;
+        width: 80%;
+    }   
+    .rightcontent{
+        margin: 40px 0px;
+    }
+    .rightcontentblue{
+        background-color: rgb(37, 119, 253);
+        padding: 20px 10px;
+        border-radius: 10px;
+        color: white;
+    }
+
+
+
+
+
+
+    .lettercon{
+        padding:0 100px;
+        margin: 40px 0px;
+
+    }
+
+
+    .letter{
+        background-image:url("assets (3)/asset 28.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 360px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-right: 400px;
+        padding-left: 100px;
+    }
+
+    .letterleft h1{
+        font-size: 50px;
+        font-family: "Playfair Display", serif;
+    }
+    .letterleft p{
+        margin: 10px 0px;
+    }
+
+    .letterright button{
+        background-color: rgb(37, 119, 253);
+        color: white;
+        border: none;
+        border-radius: 50px;
+        margin-right: -100px;
+        position: absolute;
+        right: 80px;
+        padding: 15px 20px;
+        font-size: larger;
+    }
+    .lettersearch input{
+        background-color: transparent;
+        font-size: large;
+        
+        justify-content: center;
+    }
+    .lettersearch{
+     position: relative; 
+     height: 55px;  
+     width: 400px;
+    margin: 20px 25px;
+     background-color: white;
+     padding: 10px 20px;
+    }
+    
+
+
+
+
+
+    .systemcon{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .system i{
+        font-size: 50px;
+        opacity: .7;
+        font-weight: 100;
+        margin: 20px 0px;
+    }
+    .system{
+        margin: 20px 100px;
+    }
+    .system p{
+        width: 200px;
+        font-size: large;
+        opacity: .7;
+        margin: 20px 0px;
+    }
+
+
+
+
+
+    .samplecon{
+        display: flex;
+    }
+
+
+
+
+
+    .footlist{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 10px 100px;
+        margin-top: 100px;
+    }
+
+    
+    .list1 p{
+        width: 250px;
+        margin: 20px 0px;
+        line-height: 30px;
+        font-size: 19px;
+        opacity: .6;
+
+    }
+    .list1 img{
+        margin-bottom: 30px;
+        align-items: start;
+        padding: 0px;
+    }
+    .lists ul{
+        list-style: none;
+        margin: 30px 0px;
+    }
+    .lists h1{
+        font-weight: 400;
+        font-size:25px;
+    }
+    .lists ul li{
+        line-height: 40px;
+        font-size: large;
+        opacity: .7;
+    }
+
+
+
+
+    .copyright{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin: 50px ;
+        line-height: 250px;
+    }
+    .copycontent p{
+        font-size: large;
+        opacity: .7;
+    }
+    .copycontent p span{
+        color:rgb(37, 119, 253);
+        margin: 0px 5px;
+        font-weight:400;
+    }
+
+    .copyicons i {
+        font-size: 20px;
+        margin: 0px 10px;
+    }
+</style>
+
+<body>
+    <div class="main">
+        <header>
+            <div class="container infocon">
+
+                <div class="info">
+                    <div class="infoleft">
+                        <div class="flag">
+                            <img src="assets (3)/asset 1.png" alt="">
+                        </div>
+                        <div class="country">
+                            <select name="#" id="country">
+                                <option value="#">USA</option>
+                                <option value="#">SPN</option>
+                                <option value="#">CDA</option>
+                                <option value="#">USD</option>
+                            </select>
+                        </div>
+                        <div class="num">
+                            <p>+7723457886</p>
+                        </div>
+                    </div>
+                    <div class="inforight">
+                        <ul>
+                            <li>My Account</li>
+                            <li>Wish List</li>
+                            <li>Shopping</li>
+                            <li>Cart</li>
+                            <li>Checkout</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </header>
+        <div class="container">
+            <div class="nav">
+                <div class="navleft">
+                    <img src="assets (3)/asset 0.png" alt="">
+                </div>
+                <div class="navmidel">
+                    <ul>
+                        <li>Home</li>
+                        <li>Catagori</li>
+                        <li class="latest"><a href="#">Latest</a>
+                            <div class="hot">HOT</div>
+                        </li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Pages</a></li>
+                        <li>Contact</li>
+                    </ul>
+                </div>
+                <div class="navright">
+                    <div class="search">
+                        <input type="text" placeholder="Search Products">
+                        <i class='bx bx-search-alt-2'></i>
+                    </div>
+                    <div class="heart">
+                        <i class='bx bx-heart'></i>
+                    </div>
+                    <div class="cart">
+                        <i class='bx bxs-cart'></i>
+                    </div>
+                    <button>
+                        Sing In
+                    </button>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container covercon">
+
+
+            <div class="cover">
+                <div class="coverimg">
+                    <img src="assets (3)/asset 2.png" alt="">
+                </div>
+                <div class="covercontent">
+                    <div class="content">
+                        <span>60% Discount</span>
+                        <h1>Winter Collection</h1>
+                        <p>Best Cloth Collection By 2020! </p>
+
+                        <button>Shop Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <div class="container catcon">
+                <div class="category">
+                    <div class="cattop">
+                        <h1>Shop by Category</h1>
+                    </div>
+                    <div class="catbottom">
+                        <div class="womens products">
+                            <img src="assets (3)/asset 3.jpeg" alt="">
+                            <div class="catcontent">
+                                <h1>Owmen'S</h1>
+                                <a href="#">Best New Deals</a><br>
+                                <span class="overrite" >New Collection</span>
+                            </div>
+                        </div>
+                        <div class="winter products">
+                            <img src="assets (3)/asset 4.jpeg" alt="">
+                            <div class="catcontent">
+                                <span>Discount</span>
+                                <h1>Winter Cloth</h1>
+                                <span>New Collection</span>
+                                
+
+                            </div>
+                        </div>
+                        <div class="mens products">
+                            <img src="assets (3)/asset 5.jpeg" alt="">
+                            <div class="catcontent">
+                                <h1>Men'S Cloth</h1>
+                                <a href="#">Best New Deals</a><br>
+                                <span class="overrite" >New Collection</span>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container listcon">
+                <div class="types">
+                    <div class="typeleft">
+                        <h1>Latest Products</h1>
+                    </div>
+                    <div class="typeright">
+                        <ul>
+                            <li>All</li>
+                            <li>New</li>
+                            <li>Featured</li>
+                            <li>Offer</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="productitems">
+                    <div class="item">
+                        <img src="assets (3)/asset 6.png" alt="">
+                        <div class="new"></div>
+                        <div class="stars">
+                            <i class='bx bxs-star' ></i>
+                            <i class='bx bxs-star' ></i>
+                            <i class='bx bxs-star' ></i>
+                            <i class='bx bx-star' ></i>
+                            <i class='bx bx-star' ></i>
+                            
+                        </div>
+                        <h2>Green Dress With Details</h2>
+                        <ul>
+                            <li>$40.00</li>
+                            <li><del>$60.00</del></li>
+                        </ul>
+
+                    </div>
+                    <div class="item">
+                        <img src="assets (3)/asset 7.png" alt="">
+                        <div class="new"></div>
+                        <div class="stars">
+                            <i class='bx bxs-star' ></i>
+                            <i class='bx bxs-star' ></i>
+                            <i class='bx bxs-star' ></i>
+                            <i class='bx bx-star' ></i>
+                            <i class='bx bx-star' ></i>
+                        </div>
+                        <h2>Green Dress With Details</h2>
+                        <ul>
+                            <li>$40.00</li>
+                            <li><del>$60.00</del></li>
+                        </ul>
+
+                    </div>
+                    <div class="item">
+                        <img src="assets (3)/asset 8.png" alt="">
+                        <div class="new"></div>
+                        <div class="stars">
+                            <i class='bx bxs-star' ></i>
+                            <i class='bx bxs-star' ></i>
+                            <i class='bx bxs-star' ></i>
+                            <i class='bx bx-star' ></i>
+                            <i class='bx bx-star' ></i>
+                        </div>
+                        <h2>Green Dress With Details</h2>
+                        <ul>
+                            <li>$40.00</li>
+                            <li><del>$60.00</del></li>
+                        </ul>
+
+                    </div>
+                    <div class="item">
+                        <img src="assets (3)/asset 9.png" alt="">
+                        <div class="new"></div>
+                        <div class="stars">
+                            <i class='bx bxs-star' ></i>
+                            <i class='bx bxs-star' ></i>
+                            <i class='bx bxs-star' ></i>
+                            <i class='bx bx-star' ></i>
+                            <i class='bx bx-star' ></i>
+                        </div>
+                        <h2>Green Dress With Details</h2>
+                        <ul>
+                            <li>$40.00</li>
+                            <li><del>$60.00</del></li>
+                        </ul>
+
+                    </div>
+                    <div class="item">
+                        <img src="assets (3)/asset 10.png" alt="">
+                        <div class="new"></div>
+                        <div class="stars">
+                            <i class='bx bxs-star' ></i>
+                            <i class='bx bxs-star' ></i>
+                            <i class='bx bxs-star' ></i>
+                            <i class='bx bx-star' ></i>
+                            <i class='bx bx-star' ></i>
+                        </div>
+                        <h2>Green Dress With Details</h2>
+                        <ul>
+                            <li>$40.00</li>
+                            <li><del>$60.00</del></li>
+                        </ul>
+
+                    </div>
+                    <div class="item">
+                        <img src="assets (3)/asset 11.png" alt="">
+                        <div class="new"></div>
+                        <div class="stars">
+                            <i class='bx bxs-star' ></i>
+                            <i class='bx bxs-star' ></i>
+                            <i class='bx bxs-star' ></i>
+                            <i class='bx bx-star' ></i>
+                            <i class='bx bx-star' ></i>
+                        </div>
+                        <h2>Green Dress With Details</h2>
+                        <ul>
+                            <li>$40.00</li>
+                            <li><del>$60.00</del></li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container shopcon">
+                <div class="shopproduct">
+                    <div class="model1">
+                        <img src="assets (3)/asset 12.png" alt="">
+                    </div>
+                    <div class="model1text">
+                        <span>KAMAR</span>
+                    </div>
+                    <div class="model1content">
+                        <h1>
+                            Find The Best Product from Our Shop
+                        </h1>
+                        <p>Designers who are interesten creating state ofthe.</p>
+                        <button>
+                            Shop Now
+                        </button>
+                    </div>
+                    <div class="imgcloth">
+                        <img src="assets (3)/asset 13.png" alt="">
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <section>
+            <div class="container collectioncon">
+                <div class="collection">
+                    <div class="collectionleft">
+                        <div class="leftcontent">
+                            <h1>Best Collection of This Month</h1>
+                            <p>Designers who are interesten crea.</p>
+                            <button>Shop now</button>
+                        </div>
+                        <div class="leftimg">
+                            <img src="assets (3)/asset 14.png" alt="">
+                        </div>
+                    </div>
+                    <div class="collectionmidle">
+                        <img src="assets (3)/asset 15.png" alt="">
+                    </div>
+                    <div class="collectionright">
+                        <div class="colimg">
+                            <div class="rightcontent">
+                                <h1>Menz Winter Jacket</h1>
+                            </div>
+                            <div class="img">
+                                <img src="assets (3)/asset 16.png" alt="">
+                            </div>
+                        </div>
+                        <div class="colimg">
+                            <div class="rightcontent rightcontentblue">
+                                <h1>Menz Winter Jacket</h1>
+                            </div>
+                            <div class="img">
+                                <img src="assets (3)/asset 17.png" alt="">
+                            </div>
+                        </div>
+                        <div class="colimg">
+                            <div class="rightcontent">
+                                <h1>Menz Winter Jacket</h1>
+                            </div>
+                            <div class="img">
+                                <img src="assets (3)/asset 18.png" alt="">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section>
+            <div class="container lettercon">
+                <div class="letter">
+                   <img src="assets (3)/asset 19.png" alt="">
+                    <div class="letterleft">
+                        <h1>Get Our <br>Latest Offers News</h1>
+                        <p>Subscribe news latter</p>
+                    </div>
+
+                    <div class="letterright ">
+                        <div class="search lettersearch">
+                            <input type="text" placeholder="Your email here">
+                            <button class="letterbtn">Shop now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section>
+            <div class="container systemcon">
+                <div class="system">
+                    <i class='bx bxs-package'></i>
+                    <h1>Free Shipping Method</h1>
+                    <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+                </div>
+                <div class="system">
+                    <i class='bx bx-lock-open' ></i>
+                    <h1>Secure Payment System</h1>
+                    <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+                </div>
+                <div class="system">
+                    <i class='bx bx-refresh'></i>
+                    <h1>Secure Payment System</h1>
+                    <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section>
+            <div class=" container samplecon">
+                <img src="assets (3)/asset 20.jpeg" alt="">
+                <img src="assets (3)/asset 21.jpeg" alt="">
+                <img src="assets (3)/asset 22.jpeg" alt="">
+                <img src="assets (3)/asset 23.jpeg" alt="">
+                <img src="assets (3)/asset 24.jpeg" alt="">
+            </div>
+        </section>
+
+
+
+
+        <footer>
+            <div class="container footercon">
+                <div class="footlist">
+                    <div class="list1">
+                        <img src="assets (3)/asset 0.png" alt="">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore.</p>
+                    </div>
+                    <div class="list2 lists">
+                        <h1>Quick Links</h1>
+                        <ul>
+                            <li>About</li>
+                            <li>Offer & Discount</li>
+                            <li>Get Cupon</li>
+                            <li>Contact Us</li>
+                        </ul>
+                    </div>
+                    <div class="list3 lists">
+                        <h1>New Product</h1>
+                        <ul>
+                            <li>Womens Cloth</li>
+                            <li>Fashion Assoseries</li>
+                            <li>Man Assoseries</li>
+                            <li>Rubber mad Toy</li>
+                        </ul>
+                    </div>
+                    <div class="list4 lists">
+                        <h1>Support</h1>
+                        <ul>
+                            <li>Frequently Asked Questions</li>
+                            <li>Terms & Conditions</li>
+                            <li>Privacy Policy</li>
+                            <li>Report a Payment Issue</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <div class="copycontent">
+                        <p>Copyright ©2023 All rights reserved | This template is made with <span><i class='bx bx-heart' ></i></span> by <span>Colorlib</span> </p>
+                    </div>
+                    <div class="copyicons">
+                        <i class='bx bxl-twitter' ></i>
+                        <i class='bx bxl-facebook-circle' ></i>
+                        <i class='bx bxl-behance' ></i>
+                        <i class='bx bx-globe' ></i>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
